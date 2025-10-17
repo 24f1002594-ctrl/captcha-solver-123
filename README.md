@@ -1,1 +1,34 @@
-# Captcha Solver FrontendApp This is a simple, single-page responsive HTML application designed to display captcha images and allow user input for solving them. It is built using plain HTML, JavaScript, and styled with Tailwind CSS for a modern and clean look. ## Features - **Responsive Design**: Adapts gracefully to various screen sizes, from mobile to desktop. - **Tailwind CSS**: Utilizes utility-first CSS for rapid styling and maintainability. - **Image Loading**: - Defaults to loading `sample.png` if no URL parameter is provided. - Can load captcha images from a URL specified in the query string (e.g., `index.html?url=https://example.com/some_captcha.png`). - **Basic Client-Side Validation**: - For the default `sample.png` image, it validates against the hardcoded answer "ADORS". - For images loaded via URL, it provides a placeholder message indicating that client-side validation for arbitrary images is not supported and would require a backend. ## Usage To use this application: 1.  **Open `index.html`**: Simply open the `index.html` file in your web browser. 2.  **Default Captcha**: The `sample.png` image will be displayed by default. Enter "ADORS" into the input field and click "Submit" to see the correct validation message. 3.  **Load Custom Captcha**: To load a different image, append a `?url=` query parameter to the URL in your browser's address bar. For example: `file:///path/to/your/index.html?url=https://example.com/path/to/your/image.png` (replace `file:///path/to/your/` with the actual path to your `index.html` file and `https://example.com/...` with your desired image URL). ## Technologies - HTML5 - Tailwind CSS (via CDN) - JavaScript ## Development This is a self-contained single HTML file. No build steps or complex environments are required. Just open `index.html` in a modern web browser. ## Contributing Feel free to fork, modify, and improve this simple application. Pull requests are welcome for any enhancements or bug fixes. ## License This project is licensed under the MIT License. See the `LICENSE` file for more details.
+## Captcha Solver Frontend (Client-side only)
+
+This is a simple client-side application designed to demonstrate a basic captcha solving interface. It's built with HTML, Tailwind CSS, and vanilla JavaScript.
+
+### Features:
+- Displays a captcha image (`sample.png` by default).
+- Allows users to input text from the captcha.
+- Provides immediate feedback on whether the input is correct (for the default image).
+- Supports dynamic captcha images via URL parameters (though validation for dynamic images is not implemented client-side).
+
+### How to Use:
+1.  **Open `index.html` in your browser.**
+2.  You will see a captcha image (by default, `sample.png`).
+3.  Type the text you see in the image into the input field.
+4.  Click "Submit" or press Enter.
+5.  Receive feedback on your attempt.
+
+### Default Captcha:
+- The default `sample.png` contains the text: `ADORS`
+- The client-side validation specifically checks for `ADORS` (case-insensitive due to `.toUpperCase()` in JS).
+
+### Dynamic Captcha (Client-side display only):
+- You can specify a custom image URL by adding a `?url=` parameter to the `index.html` URL.
+- **Example:** `index.html?url=https://example.com/your-captcha-image.png`
+- **Note:** Client-side validation is *only* for the `sample.png` image. If you provide a dynamic URL, the app will display the image but will inform you that validation requires a backend service.
+
+### Project Structure:
+- `index.html`: The main application file containing HTML, Tailwind CSS setup, and JavaScript logic.
+- `sample.png`: The default captcha image.
+
+### Technologies Used:
+- HTML5
+- Tailwind CSS (via CDN)
+- Vanilla JavaScript
